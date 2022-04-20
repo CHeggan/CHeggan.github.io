@@ -4,8 +4,8 @@ title: "Calum Heggan"
 excerpt: "About me"
 author_profile: true
 redirect_from: 
-  - /about/
-  - /about.html
+  - /home_page/
+  - /home_page.html
 ---
 
 Currently researching within the fields of <b>Few-Shot Machine Learning </b> and </b>Anomaly Detection</b>, I am a 2nd year PhD student at the <b>University of Edinburgh</b> working with both the IPAB and IDCOM groups. I work alongside [Mehrdad Yaghoobi (Singal Processing)](https://scholar.google.com/citations?user=ljyqX34AAAAJ&hl=en&oi=ao), [Timothy Hospedales (Informatics)](https://scholar.google.com/citations?user=nHhtvqkAAAAJ&hl=en) and Sam Budgett (Thales UK). 
