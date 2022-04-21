@@ -81,7 +81,7 @@ analytics:
 # Site Author
 author:
   name             : "Calum Heggan"
-  avatar           : "profile_pic.png"
+  avatar           : "profile_pic.jpg"
   bio              : "PhD Candidate @ University Of Edinburgh & partnered with Thales UK. Interested in Few-Shot learning and Anomaly Detection for sequential signals"
   location         : "Edinburgh"
   employer         :
