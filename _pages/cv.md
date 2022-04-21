@@ -11,21 +11,20 @@ redirect_from:
 
 Education
 ======
-* B.S. in GitHub, GitHub University, 2012
-* M.S. in Jekyll, GitHub University, 2014
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
+* MPhys, University Of Edinburgh, 2020
+* Ph.D in Frugal Machine Learning, University Of Edinburgh, 2024 (expected)
 
-Work experience
+Research Experience
 ======
-* Summer 2015: Research Assistant
-  * Github University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
+* 2019: Senior Honours Project
+  * Title: X-Ray Diffraction from Crystals with Realistic Charge Distributions
+  * Duties included: Simulation of high pressure phase transitions of Magnesium using the Wien2k package
+  * Supervisor: Ingo Loa
 
-* Fall 2015: Research Assistant
-  * Github University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
+* 2020: Masters Project
+  * Title: Electride Phases and Host-Guest lattices of Group V Elements
+  * Duties included: Simulation work with the VASP package using a variety of high performance computing resources (ARCHER, Thomas)
+  * Supervisor: Andreas Hermann
   
 Skills
 ======
