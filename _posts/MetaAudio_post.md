@@ -1,7 +1,7 @@
 ---
 title: 'Blog Post number 1'
 date: 2022-05-10
-permalink: /posts/2022/05/blog-post-1/
+permalink: /posts/MetaAudio_post/
 tags:
   - few-shot learning
   - meta-learning
