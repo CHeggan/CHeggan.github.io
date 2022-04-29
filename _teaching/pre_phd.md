@@ -4,7 +4,7 @@ collection: teaching
 type: "Private"
 permalink:
 venue: "Online & In-person"
-date: 2019
+date: 2019-06-01
 location: "Edinburgh, Country"
 ---
 
