@@ -8,7 +8,7 @@ tags:
   - acoustics 
 ---
 
-MetaAudio: A Few-Shot Classification Benchmark was released in early April. It contains a variety of benchmark results for future researchers to best in the future. This blog aims to be a more easily digestible breakdown of the work. 
+`MetaAudio: A Few-Shot Classification Benchmark` was released in early April. It contains a variety of benchmark results for future researchers to best in the future. This blog aims to be a more easily digestible breakdown of the work. 
 
 Headings are cool
 ======
