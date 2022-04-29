@@ -8,7 +8,7 @@ tags:
   - acoustics 
 ---
 
-This is a sample blog post. Lorem ipsum I can't remember the rest of lorem ipsum and don't have an internet connection right now. Testing testing testing this blog post. Blog posts are cool.
+MetaAudio: A Few-Shot Classification Benchmark was released in early April. It contains a variety of benchmark results for future researchers to best in the future. This blog aims to be a more easily digestible breakdown of the work. 
 
 Headings are cool
 ======
