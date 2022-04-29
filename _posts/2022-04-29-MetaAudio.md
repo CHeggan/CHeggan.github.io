@@ -8,10 +8,10 @@ tags:
   - acoustics 
 ---
 
-'MetaAudio: A Few-Shot Classification Benchmark' was released in early April. It contains a variety of benchmark results for future researchers to beat in the future. This blog aims to be a more easily digestible breakdown of the work. 
+'MetaAudio: A Few-Shot Classification Benchmark' was released in early April. It contains a variety of benchmark results for researchers to beat in the future. This blog aims to be a more easily digestible breakdown of the work. 
 
 ## Aims of the Work
-As it currently stands, the majority of work focusing on few-shot learning exists within the image domain. 
+As it currently stands, the majority of work focusing on few-shot learning exists within computer vision. MetaAudio aims to be an accompanying benchmark to those that already exist, hopefully reducing algorithmic bias toward the image domain. To provide this, we investigate a variety of experimental settings, drawing parallels where possible to existing benchmarks. 
 
 ## Data & Setup
 ### Datasets 
@@ -25,6 +25,9 @@ As it currently stands, the majority of work focusing on few-shot learning exist
 
 
 ### Joint Training
+#### Sampling Types
+
+####
 
 
 
@@ -32,6 +35,5 @@ As it currently stands, the majority of work focusing on few-shot learning exist
 
 ## Reproduction & Use
 
-### Aren't headings cool?
 
-# images/MetaAudio_blog_post/
+<>  images/MetaAudio_blog_post/
