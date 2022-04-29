@@ -1,5 +1,5 @@
 ---
-title: 'Blog Post number 1'
+title: 'MetaAudio: A Benchmark Breakdown'
 date: 2022-04-29
 permalink: /posts/2022/05/blog-post-1/
 tags:
