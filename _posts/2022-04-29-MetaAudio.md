@@ -36,7 +36,7 @@ The extra dataset included is a pruned version of the BirdClef set. As its conta
 Pre-processing was kept simple with only a few major steps. The first of these was z-normalisation on each raw audio sample individually. We then converted all raw time-series into log-mel spectrograms using identical parameters across both samples and datasets. For the final normalisation on the sampled spectrograms we performed some prior experimentation, looking specifically at at per-sample, channel-wise and global. In general both channel and global performed similarly, with each taking the edge in some cases. For simplicity we opted to use global normalisation across all samples and experiments in the work. 
 
 ![Alt text](/images/MetaAudio_blog_post/spectrogram_transform.svg)
-
+*image_caption*
 
 #### Variable Length Sampling
 
