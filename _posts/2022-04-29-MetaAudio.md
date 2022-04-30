@@ -38,6 +38,11 @@ Pre-processing was kept simple with only a few major steps. The first of these w
 ![Alt text](/images/MetaAudio_blog_post/spectrogram_transform.svg)
 *image_caption*
 
+<span class="img_container center" style="display: block;">
+    <img alt="test" src="/images/MetaAudio_blog_post/spectrogram_transform.svg" style="display:block; margin-left: auto; margin-right: auto;" title="caption" />
+    <span class="img_caption" style="display: block; text-align: center;">caption</span>
+</span>
+
 #### Variable Length Sampling
 
 figure for here 
