@@ -31,6 +31,8 @@ Over the full benchmark we experiment with 7 unique datasets, 5 of which we spli
 
 The extra dataset included is a pruned version of the BirdClef set. As its contained samples span from 30 seconds to 30 minutes, hardware requirements were significantly higher. This was to an extent that we considered it a barrier of entry when trying to train and utilise networks on the set. To overcome this we pose a pruned version where samples longer than 180 seconds are removed along with classes that contain fewer than 50 examples. 
 
+Each dataset used for both meta-train and meta-test are class-wise split into training, validation and test sets with a ratio of 7/1/2. 
+
 
 ### Processing & Input
 Pre-processing was kept simple with only a few major steps. The first of these was z-normalisation on each raw audio sample individually. We then converted all raw time-series into log-mel spectrograms using identical parameters across both samples and datasets. 
@@ -44,7 +46,11 @@ For the final normalisation on the sampled spectrograms we performed some prior 
 
 #### Variable Length Sampling
 
-figure for here 
+
+<span class="img_container center" style="display: block;">
+    <img alt="test" src="/images/MetaAudio_blog_post/spectrogram_transform.svg" style="display:block; margin-left: auto; margin-right: auto;" title="caption" />
+    <span class="img_caption" style="display: block; text-align: center;">Figure 2: How variable length samples are dealt with</span>
+</span>
 
 ## Experiments
 ### Within Dataset Evaluation
