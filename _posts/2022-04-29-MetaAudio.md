@@ -51,17 +51,17 @@ Pre-processing was kept simple with only a few major steps. The first of these w
 
 For the final normalisation on the sampled spectrograms we performed some prior experimentation, looking specifically at at per-sample, channel-wise and global. In general both channel and global performed similarly, with each taking the edge in some cases. For simplicity we opted to use global normalisation across all samples and experiments in the work. 
 
-#### Variable Length Samples 
+##### Variable Length Samples 
 For variable length samples we first split the raw audio clip into __L__ second sub-clips before later converting each to log-mel spectrograms. All of these sub-clips are then stacked and stored as one single file, which can be later sampled. If any sub-clips is less than __L__ we repeat the clip and clip to the required length. The exact value of __L__ is left as a hyperparameter which we investigate the effects of, however For the majority of the experiments in this version of MetaAudio it is set to 5 seconds, primarily to aid joint training and cross-dataset experimentation. All of this processing is done entirely offline, similarly to teh fixed length setting. 
-
-There are a few reasons we choose this specific variable length pipeline. Firstly, splitting the clip up and then converting to spectrograms prevents data leakage between sub-clips compared to the alternative, where the full spectrogram is created and then split up. Additionally the stacking of sub-clips in one file allows us to use the same file whether the sample is selected as either a support or a query. If a variable length sample is chosen as a support vector, one of the sub-clips is randomly chosen for use. If selected as a query all sub-clips are predicted over, with a majority vote system deciding on the final assigned class. 
 
 <span class="img_container center" style="display: block;">
     <img alt="test" src="/images/MetaAudio_blog_post/variable_spec_raw.svg" style="display:block; margin-left: auto; margin-right: auto;" title="caption" />
     <span class="img_caption" style="display: block; text-align: center;">Figure 3: How variable length samples are dealt with</span>
 </span>
 
-When 
+There are a few reasons we choose this specific variable length pipeline. Firstly, splitting the clip up and then converting to spectrograms prevents data leakage between sub-clips compared to the alternative, where the full spectrogram is created and then split up. Additionally the stacking of sub-clips in one file allows us to use the same file whether the sample is selected as either a support or a query. If a variable length sample is chosen as a support vector, one of the sub-clips is randomly chosen for use. If selected as a query all sub-clips are predicted over, with a majority vote system deciding on the final assigned class. 
+
+***
 
 ## Experiments
 ### Within Dataset Evaluation
