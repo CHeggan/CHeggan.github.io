@@ -52,16 +52,25 @@ Pre-processing was kept simple with only a few major steps. The first of these w
 For the final normalisation on the sampled spectrograms we performed some prior experimentation, looking specifically at at per-sample, channel-wise and global. In general both channel and global performed similarly, with each taking the edge in some cases. For simplicity we opted to use global normalisation across all samples and experiments in the work. 
 
 ##### Variable Length Samples 
-For variable length samples we first split the raw audio clip into __L__ second sub-clips before later converting each to log-mel spectrograms. All of these sub-clips are then stacked and stored as one single file, which can be later sampled. If any sub-clips is less than __L__ we repeat the clip and clip to the required length. The exact value of __L__ is left as a hyperparameter which we investigate the effects of, however For the majority of the experiments in this version of MetaAudio it is set to 5 seconds, primarily to aid joint training and cross-dataset experimentation. All of this processing is done entirely offline, similarly to teh fixed length setting. 
+For variable length samples we first split the raw audio clip into *L* second sub-clips before later converting each to log-mel spectrograms. All of these sub-clips are then stacked and stored as one single file, which can be later sampled. If any sub-clips is less than *L* we repeat the clip and clip to the required length. The exact value of *L* is left as a hyperparameter which we investigate the effects of, however For the majority of the experiments in this version of MetaAudio it is set to 5 seconds, primarily to aid joint training and cross-dataset experimentation. All of this processing is done entirely offline, similarly to teh fixed length setting. 
 
 <span class="img_container center" style="display: block;">
     <img alt="test" src="/images/MetaAudio_blog_post/variable_spec_raw.svg" style="display:block; margin-left: auto; margin-right: auto;" title="caption" />
-    <span class="img_caption" style="display: block; text-align: center;">Figure 3: How variable length samples are dealt with</span>
+    <span class="img_caption" style="display: block; text-align: center;">Figure 3: Variable length clips are first split into sub-clips of *L* seconds. From here the sub-clips are individually converted to spectrograms. If any clips fall short they are repeated until the required length in the spectrogram space. </span>
 </span>
 
 There are a few reasons we choose this specific variable length pipeline. Firstly, splitting the clip up and then converting to spectrograms prevents data leakage between sub-clips compared to the alternative, where the full spectrogram is created and then split up. Additionally the stacking of sub-clips in one file allows us to use the same file whether the sample is selected as either a support or a query. If a variable length sample is chosen as a support vector, one of the sub-clips is randomly chosen for use. If selected as a query all sub-clips are predicted over, with a majority vote system deciding on the final assigned class. 
 
-***
+### Algorithms
+Due to the large amount of algorithmic literature for meta-learning, MetaAudio is not exhaustive in the algorithms tested. To overcome this as best as possible, we chose a representative few, spanning baselines, metric learners and gradient-based approaches. The exact list considered so far are as follows:
+
+  -  [FO-MAML](https://arxiv.org/abs/1703.03400)
+  -  [FO-Meta-Curvature](https://arxiv.org/abs/1902.03356)
+  -  [Prototypical Networks](https://arxiv.org/abs/1703.05175)
+  -  [SimpleShot](https://arxiv.org/abs/1911.04623)
+  -  [Meta-Baseline](https://arxiv.org/abs/2003.04390)
+
+ First order methods are used for the gradient-based learners as during initial experimentation, using 2nd order gradients yielded either similar or lower performance. 
 
 ## Experiments
 ### Within Dataset Evaluation
