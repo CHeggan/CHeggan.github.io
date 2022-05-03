@@ -14,7 +14,15 @@ tags:
 ## Aims of the Work
 As it currently stands, the majority of work focusing on few-shot learning exists within computer vision. MetaAudio aims to be an accompanying benchmark to those that already exist, hopefully reducing algorithmic bias toward the image domain. To provide this, we investigate a variety of experimental settings, drawing parallels where possible to existing benchmarks. 
 
-## Data & Setup
+## Few-Shot Audio Classification
+For the majority of the algorithms used 
+
+<span class="img_container center" style="display: block;">
+    <img alt="test" src="/images/MetaAudio_blog_post/Few_shot_audio_classification.svg" style="display:block; margin-left: auto; margin-right: auto;" title="caption" />
+    <span class="img_caption" style="display: block; text-align: center;">Figure 1: Example tasks for few-shot audio classification with spectrograms</span>
+</span>
+
+## Data, Algorithms & Setup
 ### Datasets 
 Over the full benchmark we experiment with 7 unique datasets, 5 of which we split up class-wise for both training and evaluation, and 2 of which we set aside for cross-dataset testing. Of these 7, 3 are fixed length (all samples same size e.g. 5 seconds) and 4 are variable length (sample length varies over the full dataset). 
 
@@ -44,13 +52,15 @@ Pre-processing was kept simple with only a few major steps. The first of these w
 
 For the final normalisation on the sampled spectrograms we performed some prior experimentation, looking specifically at at per-sample, channel-wise and global. In general both channel and global performed similarly, with each taking the edge in some cases. For simplicity we opted to use global normalisation across all samples and experiments in the work. 
 
-#### Variable Length Sampling
-
+#### Variable Length Samples 
+For variable length samples we first split the raw audio clip into __**L**__ second sub-clips before later converting each to log-mel spectrograms. All of these sub-clips are then stacked and stored as one single file, which can be later sampled. There are a few reasons we perform these steps. Firstly, splitting the clip up and then converting to spectrograms prevents data leakage between sub-clips compared to the alternative, where the full spectrogram is created and then split up. The stacking of sub-clips in one file allows us to use the same file whether the sample is selected as either a support or a query. 
 
 <span class="img_container center" style="display: block;">
-    <img alt="test" src="/images/MetaAudio_blog_post/spectrogram_transform.svg" style="display:block; margin-left: auto; margin-right: auto;" title="caption" />
+    <img alt="test" src="/images/MetaAudio_blog_post/variable_spec_raw.svg" style="display:block; margin-left: auto; margin-right: auto;" title="caption" />
     <span class="img_caption" style="display: block; text-align: center;">Figure 2: How variable length samples are dealt with</span>
 </span>
+
+If a variable length sample is chosen as a 
 
 ## Experiments
 ### Within Dataset Evaluation
