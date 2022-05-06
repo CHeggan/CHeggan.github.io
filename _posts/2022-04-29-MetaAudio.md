@@ -77,12 +77,26 @@ Due to the large amount of algorithmic literature for meta-learning, MetaAudio i
 ## Experiments
 ### Within Dataset Evaluation
 
+<span class="img_container center" style="display: block;">
+    <img alt="test" src="/images/MetaAudio_blog_post/within_dataset.svg" style="display:block; margin-left: auto; margin-right: auto;" title="caption" />
+    <span class="img_caption" style="display: block; text-align: center;">Figure 4:  </span>
+</span>
 figure for here 
 
 ### Joint Training
-#### Sampling Types
+#### Within Dataset Sampling
 figures for here (2)
+<span class="img_container center" style="display: block;">
+    <img alt="test" src="/images/MetaAudio_blog_post/joint_train_not_mixed.svg" style="display:block; margin-left: auto; margin-right: auto;" title="caption" />
+    <span class="img_caption" style="display: block; text-align: center;">Figure 4:  </span>
+</span>
 
+#### Free Dataset Sampling
+
+### Joint Training to Cross-Dataset
+
+
+### Massive Pre-Train
 
 
 ### Other Notes
