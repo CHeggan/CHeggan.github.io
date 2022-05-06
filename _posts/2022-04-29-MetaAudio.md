@@ -76,10 +76,11 @@ Due to the large amount of algorithmic literature for meta-learning, MetaAudio i
 
 ## Experiments
 ### Within Dataset Evaluation
+The first ste of experiments carried out looked at within dataset meta-training, validation and testing. How this class-wise split is formatted is demonstrated in Figure 4.
 
 <span class="img_container center" style="display: block;">
     <img alt="test" src="/images/MetaAudio_blog_post/within_dataset.svg" style="display:block; margin-left: auto; margin-right: auto;" title="caption" />
-    <span class="img_caption" style="display: block; text-align: center;">Figure 4:  </span>
+    <span class="img_caption" style="display: block; text-align: center;">Figure 4: An example of meta-train, validation and testing, using a bird song dataset like BirdClef2020. Icons are used to more visually demonstrate the possible classes and how they relate to one another. </span>
 </span>
 figure for here 
 
