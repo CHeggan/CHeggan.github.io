@@ -93,6 +93,12 @@ figures for here (2)
 
 #### Free Dataset Sampling
 
+<span class="img_container center" style="display: block;">
+    <img alt="test" src="/images/MetaAudio_blog_post/Joint Train - Free Sampling.svg" style="display:block; margin-left: auto; margin-right: auto;" title="caption" />
+    <span class="img_caption" style="display: block; text-align: center;">Figure 4:  </span>
+</span>
+
+
 ### Joint Training to Cross-Dataset
 
 
