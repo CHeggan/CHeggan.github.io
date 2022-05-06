@@ -15,12 +15,14 @@ tags:
 As it currently stands, the majority of work focusing on few-shot learning exists within computer vision. MetaAudio aims to be an accompanying benchmark to those that already exist, hopefully reducing algorithmic bias toward the image domain. To provide this, we investigate a variety of experimental settings, drawing parallels where possible to existing benchmarks. 
 
 ## Few-Shot Audio Classification
-For the majority of the algorithms used 
+At test-time, few-shot classification performance is evaluated using N-way k-shot tasks, where N is the novel classes (never seen by the model before) and k is the number of examples per each of those classes given for use. For instance, each of the tasks T<sub>1</sub> -> T<sub>3</sub> represented in Figure 1 are 5-way 1-shot tasks. Each task is composed of two parts, the support which is trained on in some way (from explicit gradient descent to prototypes in some embedded space) at test time and query, the evaluation component. Parameterising these tasks with N and k also allows for more in-depth analysis of sample complexity.  
 
 <span class="img_container center" style="display: block;">
     <img alt="test" src="/images/MetaAudio_blog_post/Few_shot_audio_classification.svg" style="display:block; margin-left: auto; margin-right: auto;" title="caption" />
-    <span class="img_caption" style="display: block; text-align: center;">Figure 1: Example tasks for few-shot audio classification with spectrograms</span>
+    <span class="img_caption" style="display: block; text-align: center;">Figure 1: Example tasks for few-shot audio classification with spectrograms. Tasks contain both a support which we train on and a query which we evaluate on</span>
 </span>
+
+As well as testing like this, most of the algorithms considered also train with these few-shot tasks (called episodic training). The only exception to this is SimpleShot which trains with more traditional batching over the training classes, after which its linear head is stripped and the remainder of the model used as a feature extractor.  
 
 ## Data, Algorithms & Setup
 ### Datasets 
