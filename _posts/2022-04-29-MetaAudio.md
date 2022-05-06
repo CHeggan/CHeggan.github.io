@@ -89,10 +89,10 @@ The first ste of experiments carried out looked at within dataset meta-training,
 
 <span class="img_container center" style="display: block;">
     <img alt="test" src="/images/MetaAudio_blog_post/within_dataset.svg" style="display:block; margin-left: auto; margin-right: auto;" title="caption" />
-    <span class="img_caption" style="display: block; text-align: center;">Figure 4: An example of meta-train, validation and testing, using a bird song dataset like BirdClef2020. Icons are used to more visually demonstrate the possible classes and how they relate to one another. </span>
+    <span class="img_caption" style="display: block; text-align: center;">Figure 4: An example of meta-train, validation and testing, using a bird song dataset like BirdClef2020. Icons are used to more visually demonstrate the possible classes and how they might relate to one another. </span>
 </span>
 
-In general we found that gradient-based learners like [MAML](https://arxiv.org/abs/1703.03400) and [Meta-Curvature](https://arxiv.org/abs/1902.03356) outperformed both the baseline models and metric learners. 
+In general we found that gradient-based (GBML) learners like [MAML](https://arxiv.org/abs/1703.03400) and [Meta-Curvature](https://arxiv.org/abs/1902.03356) outperformed both the baseline models and metric learners. 
 
 | **Dataset**                  | **FO-MAML**     | **FO-Meta-Curvature** | **ProtoNets** | **SimpleShot CL2N** | **Meta_baseline** |
 |:----------------------------:|:---------------:|:---------------------:|:-------------:|:-------------------:|:-----------------:|
@@ -102,31 +102,36 @@ In general we found that gradient-based learners like [MAML](https://arxiv.org/a
 | VoxCeleb1                    | 60.89 ± 0.45    | **63.85 ± 0.44**      |59.64 ± 0.44   |48.50 ± 0.42         |55.54 ± 0.42       |
 | BirdCLEF 2020 (Pruned)       |  56.26 ± 0.45   |**61.34 ± 0.46**       | 56.11 ± 0.46  | 57.66 ± 0.43        | 57.28 ± 0.41      |
 
-This is immediately in contrast with the performance comparisons shown in the [SimpleShot](https://arxiv.org/abs/1911.04623) work with images, where the simple baseline was able to beat out a variety of gradient-based approaches. 
+This is immediately in contrast with the performance comparisons shown in the [SimpleShot](https://arxiv.org/abs/1911.04623) work with images, where the simple baseline was able to beat out a variety of GBML approaches. Specifically we observe Meta-Curavture performing strongest on 4/5 datasets, with MAML taking the final 1/5. We propose that this is due to the GBML methods’ adaption mechanism, updating feature representation at each meta-test episode, making them particularly useful for tasks with high inter-class/episode variance. Meanwhile the others must rely on a fixed feature extractor that cannot adapt to each unique episode
 
 ### Joint Training
 The general idea for our joint training experiments is to train concurrently on all of our available datasets, hopefully leading to some implicit data-driven regularisation of the network. After training a network this way, we apply it on the individual test splits of the datasets used. This can be seen in Figure 5 and 6, where although training is mixed in some way, testing still occurs in each datasets meta-test split. We also apply these models to two held-out sets, all of which we use as meta-test.  
 
-We indentified two distinct ways to train with all datasets simultaneously, one where any individual task can only contain supports and queries from one of the included datasets (which we call **within dataset sampling**), and one in which samples contained within a class are unconstrained (**free dataset sampling**). 
-
-#### Within Dataset Sampling
-
-
 <span class="img_container center" style="display: block;">
     <img alt="test" src="/images/MetaAudio_blog_post/joint_train_not_mixed.svg" style="display:block; margin-left: auto; margin-right: auto;" title="caption" />
-    <span class="img_caption" style="display: block; text-align: center;">Figure 4:  </span>
+    <span class="img_caption" style="display: block; text-align: center;">Figure 5:  </span>
 </span>
 
-#### Free Dataset Sampling
+We indentified two distinct ways to train with all datasets simultaneously, one where any individual task can only contain supports and queries from one of the included datasets (which we call **within dataset sampling**), and one in which samples contained within a class are unconstrained (**free dataset sampling**). 
 
 <span class="img_container center" style="display: block;">
     <img alt="test" src="/images/MetaAudio_blog_post/Joint Train - Free Sampling.svg" style="display:block; margin-left: auto; margin-right: auto;" title="caption" />
-    <span class="img_caption" style="display: block; text-align: center;">Figure 4:  </span>
+    <span class="img_caption" style="display: block; text-align: center;">Figure 6:  </span>
 </span>
+
+Comparing the performance of both sampling techniques against within-dataset evaluation, we see a general degradation of performance, with only ESC-50 and Kaggle18 improving (both from free dataset sampling). The difference varies heavily in magnitude between both the datasets and sampling routine used alike. The generally mixed results here mirror other studies (full references in paper) and reflect the tradeoff between generally increasing the amount of training data available and the increased difficulty of learning a single model capable of simultaneous high performance on diverse data domains. This is some evidence that MetaAudio compliments existing works in providing a challenging benchmark to test future meta-learners' ability to fit diverse audio types, as well as enabling few-shot recognition of new categories. 
+
+
+
+Additionally, we contrast how the joint training episode sampling routines compare. For our main datasets, we observe 3/5 of the top results were obtained using the free sampling method, with the 2 outliers belonging to VoxCeleb and BirdClef - evidence that their tasks require significantly different and specific model parametrisation, as the within dataset task sampling would allow more opportunity to learn these more specialised features.
 
 
 ### Joint Training to Cross-Dataset
 
+For the held-out cross-dataset tasks (Watkins, SpechCommands), we also see the strongest performance coming from
+the free sampling routine, where it outperforms its within dataset counterpart by ∼2% in both held-out sets. As for
+the absolute performances obtained on the held-out sets, we see that our joint training transfers somewhat-effectively,
+with the model in one case attaining a respectable 50-60% and another obtaining accuracies only 5% above random.
 
 ### Massive Pre-Train
 
