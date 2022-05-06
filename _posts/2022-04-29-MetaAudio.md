@@ -154,25 +154,20 @@ The generally mixed results here mirror other studies (full references in paper)
 
 | **Dataset**                     | **FO-MAML**     | **FO-Meta-Curvature** | **ProtoNets** | **SimpleShot CL2N** | **Meta_baseline** |
 |:----------------------------:|:---------------:|:-----------------:|:-----------------:|:----------:|:-----------------:|
-| ESC-50                      |  76.24 ± 0.42 |75.72 ± 0.42 |68.63 ± 0.39 |59.04 ± 0.41| 61.53 ± 0.40|
-| NSynth                       | 77.71 ± 0.41 |83.51 ± 0.37 |79.06 ± 0.36 |90.02 ± 0.27 |85.04 ± 0.31|
-| FSDKaggle18                 |  44.85 ± 0.45 |45.46 ± 0.45| 41.76 ± 0.41 |38.12 ± 0.40 |35.90 ± 0.38|
-| VoxCeleb1                   | 39.52 ± 0.42 |39.83 ± 0.43| 40.74 ± 0.39| 42.66 ± 0.41| 36.63 ± 0.38|
-| BirdCLEF 2020 (Pruned)       | 46.76 ± 0.45| 46.41 ± 0.46 |44.70 ± 0.42| 37.96 ± 0.40| 32.29 ± 0.38|
-| Watkins                      | 60.27 ± 0.47 |58.19 ± 0.47| 48.56 ± 0.42 |54.34 ± 0.43| 53.23 ± 0.43|
-| SpeechCommands V1 |27.29 ± 0.42| 26.56 ± 0.42| 24.30 ± 0.35 |24.74 ± 0.35 |23.88 ± 0.35|
-|Avg Algorithm Rank |2.1| 2.1 |3.4 |3.0| 4.3|
-
+| ESC-50                      |  **76.24 ± 0.42** |75.72 ± 0.42 |68.63 ± 0.39 |59.04 ± 0.41| 61.53 ± 0.40|
+| NSynth                       | 77.71 ± 0.41 |83.51 ± 0.37 |79.06 ± 0.36 |**90.02 ± 0.27** |85.04 ± 0.31|
+| FSDKaggle18                 |  44.85 ± 0.45 |**45.46 ± 0.45**| 41.76 ± 0.41 |38.12 ± 0.40 |35.90 ± 0.38|
+| VoxCeleb1                   | 39.52 ± 0.42 |39.83 ± 0.43| 40.74 ± 0.39| **42.66 ± 0.41**| 36.63 ± 0.38|
+| BirdCLEF 2020 (Pruned)       | **46.76 ± 0.45**| 46.41 ± 0.46 |44.70 ± 0.42| 37.96 ± 0.40| 32.29 ± 0.38|
+| Watkins                      | **60.27 ± 0.47** |58.19 ± 0.47| 48.56 ± 0.42 |54.34 ± 0.43| 53.23 ± 0.43|
+| SpeechCommands V1 |**27.29 ± 0.42**| 26.56 ± 0.42| 24.30 ± 0.35 |24.74 ± 0.35 |23.88 ± 0.35|
+|Avg Algorithm Rank |**2.1**| **2.1** |3.4 |3.0| 4.3|
 
 Additionally, we contrast how the joint training episode sampling routines compare. For our main datasets, we observe 3/5 of the top results were obtained using the free sampling method, with the 2 outliers belonging to VoxCeleb and BirdClef - evidence that their tasks require significantly different and specific model parametrisation, as the within dataset task sampling would allow more opportunity to learn these more specialised features.
 
 
 ### Joint Training to Cross-Dataset
-
-For the held-out cross-dataset tasks (Watkins, SpechCommands), we also see the strongest performance coming from
-the free sampling routine, where it outperforms its within dataset counterpart by ∼2% in both held-out sets. As for
-the absolute performances obtained on the held-out sets, we see that our joint training transfers somewhat-effectively,
-with the model in one case attaining a respectable 50-60% and another obtaining accuracies only 5% above random.
+For the held-out cross-dataset tasks (Watkins, SpechCommands V1), we also see the strongest performance coming from the free sampling routine, where it outperforms its within dataset counterpart by ∼2% in both held-out sets. As for the absolute performances obtained on the held-out sets, we see that our joint training transfers somewhat-effectively, with the model in one case attaining a respectable 50-60% and another obtaining accuracies only 5% above random.
 
 ### Massive Pre-Train
 
