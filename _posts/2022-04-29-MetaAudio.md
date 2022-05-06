@@ -105,7 +105,9 @@ In general we found that gradient-based learners like [MAML](https://arxiv.org/a
 This is immediately in contrast with the performance comparisons shown in the [SimpleShot](https://arxiv.org/abs/1911.04623) work with images, where the simple baseline was able to beat out a variety of gradient-based approaches. 
 
 ### Joint Training
-The general idea for our joint training experiments is to train concurrently on all of our available datasets, possibly leading to some implicit data-driven regularisation of the network. 
+The general idea for our joint training experiments is to train concurrently on all of our available datasets, hopefully leading to some implicit data-driven regularisation of the network. After training a network this way, we apply it on the individual test splits of the datasets used. This can be seen in Figure 5 and 6, where although training is mixed in some way, testing still occurs in each datasets meta-test split. We also apply these models to two held-out sets, all of which we use as meta-test.  
+
+We indentified two distinct ways to train with all datasets simultaneously, one where any individual task can only contain supports and queries from one of the included datasets (which we call **within dataset sampling**), and one in which samples contained within a class are unconstrained (**free dataset sampling**). 
 
 #### Within Dataset Sampling
 
@@ -127,12 +129,6 @@ The general idea for our joint training experiments is to train concurrently on 
 
 
 ### Massive Pre-Train
-
-
-### Other Notes
-Data augmentation was not used 
-
-
 
 
 
