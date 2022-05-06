@@ -28,6 +28,10 @@ As well as testing like this, most of the algorithms considered also train with 
 ### Datasets 
 Over the full benchmark we experiment with 7 unique datasets, 5 of which we split up class-wise for both training and evaluation, and 2 of which we set aside for cross-dataset testing. Of these 7, 3 are fixed length (all samples same size e.g. 5 seconds) and 4 are variable length (sample length varies over the full dataset). 
 
+<p align="center">
+    Table 1: High level details of all datasets considered in MetaAudio
+</p>
+
 | **Name**                     | **Setting**     | **$N^o$ Classes** | **$N^o$ Samples** | **Format** | **Sample Length** | **Use**         |
 |:----------------------------:|:---------------:|:-----------------:|:-----------------:|:----------:|:-----------------:|:---------------:|
 | [ESC-50](https://www.karolpiczak.com/papers/Piczak2015-ESC-Dataset.pdf)                      | Environmental   | 50                | 2,000             | Fixed      | 5s                | Meta-train/test |
@@ -93,6 +97,10 @@ The first ste of experiments carried out looked at within dataset meta-training,
 </span>
 
 In general we found that gradient-based (GBML) learners like [MAML](https://arxiv.org/abs/1703.03400) and [Meta-Curvature](https://arxiv.org/abs/1902.03356) outperformed both the baseline models and metric learners. 
+
+<p align="center">
+    Table 2: Baseline Within Dataset Results
+</p>
 
 | **Dataset**                  | **FO-MAML**     | **FO-Meta-Curvature** | **ProtoNets** | **SimpleShot CL2N** | **Meta_baseline** |
 |:----------------------------:|:---------------:|:---------------------:|:-------------:|:-------------------:|:-----------------:|
