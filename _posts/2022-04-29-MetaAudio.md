@@ -75,7 +75,14 @@ Due to the large amount of algorithmic literature for meta-learning, MetaAudio i
  First order methods are used for the gradient-based learners as during initial experimentation, using 2nd order gradients yielded either similar or lower performance.
 
 ## Experiments
-Throughout all of the experiments, the training, validation and testing subsets defined by random class-wise splitting are kept constant. This is not only an important step for this baseline work but also for future researchers tackling the problems set out here. 
+Throughout all of the experiments, the training, validation and testing subsets defined by random class-wise splitting are kept constant. This is not only an important step for this baseline work but also for future researchers tackling the problems set out here.
+### General
+#### Evaluation Method & Optimiser
+Keeping with current and past few-shot works, we evaluate a single end-to-end trained model, obtaining average classification accuracies and a 95% confidence interval over 10,000 randomly sampled tasks from the meta-test set. Although not as informative as something like k-fold validation in more traditional problems, this has become the main metric simply due to the computational and time expense of meta-learning training. For training, we used the Adam optimiser with a non-adaptive learning rate. 
+
+#### Model
+Motivated by the increasing performance gaps between basic CNNs and sequentially informed models in traditional acoustic classification as well as some local verification of potential performance gains, we opted to use a lightweight CRNN model as out backbone architecture. Specifically, the CRNN contains a 4-block convolutional backbone (1-64-64-64) with an attached 1-layer non-bidirectional RNN containing 64 hidden units. The number of outputs in the final linear layer is either of size N-way or, in the case of metric learning and baseline
+methods, 64. 
 
 ### Within Dataset Evaluation
 The first ste of experiments carried out looked at within dataset meta-training, validation and testing. How this class-wise split is formatted is demonstrated in Figure 4. This type of pipeline is teh most specific and computationally heavy, as each dataset has a model trained for it and it alone. Generally this goes against goals of generalised representation learners, however provides us with a strong baseline of performance for each of the datasets and algorithms. 
@@ -95,10 +102,14 @@ In general we found that gradient-based learners like [MAML](https://arxiv.org/a
 | VoxCeleb1                    | 60.89 ± 0.45    | **63.85 ± 0.44**      |59.64 ± 0.44   |48.50 ± 0.42         |55.54 ± 0.42       |
 | BirdCLEF 2020 (Pruned)       |  56.26 ± 0.45   |**61.34 ± 0.46**       | 56.11 ± 0.46  | 57.66 ± 0.43        | 57.28 ± 0.41      |
 
+This is immediately in contrast with the performance comparisons shown in the [SimpleShot](https://arxiv.org/abs/1911.04623) work with images, where the simple baseline was able to beat out a variety of gradient-based approaches. 
 
 ### Joint Training
+The general idea for our joint training experiments is to train concurrently on all of our available datasets, possibly leading to some implicit data-driven regularisation of the network. 
+
 #### Within Dataset Sampling
-figures for here (2)
+
+
 <span class="img_container center" style="display: block;">
     <img alt="test" src="/images/MetaAudio_blog_post/joint_train_not_mixed.svg" style="display:block; margin-left: auto; margin-right: auto;" title="caption" />
     <span class="img_caption" style="display: block; text-align: center;">Figure 4:  </span>
