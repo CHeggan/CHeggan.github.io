@@ -124,8 +124,9 @@ We indentified two distinct ways to train with all datasets simultaneously, one 
 Comparing the performance of both sampling techniques against within-dataset evaluation, we see a general degradation of performance, with only ESC-50 and Kaggle18 improving (both from free dataset sampling). The difference varies heavily in magnitude between both the datasets and sampling routine used alike. 
 
 <p align="center">
-    // Table 3: Joint Training (Within Dataset Sampling)
+    Table 3: Joint Training (Within Dataset Sampling)
 </p>
+
 | **Dataset**                     | **FO-MAML**     | **FO-Meta-Curvature** | **ProtoNets** | **SimpleShot CL2N** | **Meta_baseline** |
 |:----------------------------:|:---------------:|:-----------------:|:-----------------:|:----------:|:-----------------:|
 | ESC-50                      |  68.68 ± 0.45 |**72.43 ± 0.44** |61.49 ± 0.41| 59.31 ± 0.40 |62.79 ± 0.40
