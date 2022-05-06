@@ -87,8 +87,8 @@ The first ste of experiments carried out looked at within dataset meta-training,
 
 In general we found that gradient-based learners like [MAML](https://arxiv.org/abs/1703.03400) and [Meta-Curvature](https://arxiv.org/abs/1902.03356) outperformed both the baseline models and metric learners. 
 
-| **Dataset**                     | **FO-MAML**     | **FO-Meta-Curvature** | **ProtoNets** | **SimpleShot CL2N** | **Meta_baseline** |
-|:----------------------------:|:---------------:|:-----------------:|:-----------------:|:----------:|:-----------------:|
+| **Dataset**                  | **FO-MAML**     | **FO-Meta-Curvature** | **ProtoNets** | **SimpleShot CL2N** | **Meta_baseline** |
+|:----------------------------:|:---------------:|:---------------------:|:-------------:|:-------------------:|:-----------------:|
 
 | ESC-50                      | 74.66 ± 0.42 | **76.17 ± 0.41** | 68.83 ± 0.38 | 68.82 ± 0.39 |  71.72 ± 0.38 |
 | NSynth                       | 93.85 ± 0.24 |**96.47 ± 0.19**| 95.23 ± 0.19 |90.04 ± 0.27| 90.74 ± 0.25
