@@ -41,7 +41,7 @@ Over the full benchmark we experiment with 7 unique datasets, 5 of which we spli
 
 The extra dataset included is a pruned version of the BirdClef set. As its contained samples span from 30 seconds to 30 minutes, hardware requirements were significantly higher. This was to an extent that we considered it a barrier of entry when trying to train and utilise networks on the set. To overcome this we pose a pruned version where samples longer than 180 seconds are removed along with classes that contain fewer than 50 examples. 
 
-Each dataset used for both meta-train and meta-test are class-wise split into training, validation and test sets with a ratio of 7/1/2. 
+Each dataset used for both meta-train and meta-test are randomly class-wise split into training, validation and test sets with a ratio of 7/1/2. This random class-wise splitting with no fold validation is ot ideal but due to the expense in meta and few-shot learning, it is commonplace within the community. 
 
 ### Processing & Input
 Pre-processing was kept simple with only a few major steps. The first of these was z-normalisation on each raw audio sample individually. We then converted all raw time-series into log-mel spectrograms using identical parameters across both samples and datasets. 
@@ -75,14 +75,27 @@ Due to the large amount of algorithmic literature for meta-learning, MetaAudio i
  First order methods are used for the gradient-based learners as during initial experimentation, using 2nd order gradients yielded either similar or lower performance.
 
 ## Experiments
+Throughout all of the experiments, the training, validation and testing subsets defined by random class-wise splitting are kept constant. This is not only an important step for this baseline work but also for future researchers tackling the problems set out here. 
+
 ### Within Dataset Evaluation
-The first ste of experiments carried out looked at within dataset meta-training, validation and testing. How this class-wise split is formatted is demonstrated in Figure 4.
+The first ste of experiments carried out looked at within dataset meta-training, validation and testing. How this class-wise split is formatted is demonstrated in Figure 4. This type of pipeline is teh most specific and computationally heavy, as each dataset has a model trained for it and it alone. Generally this goes against goals of generalised representation learners, however provides us with a strong baseline of performance for each of the datasets and algorithms. 
 
 <span class="img_container center" style="display: block;">
     <img alt="test" src="/images/MetaAudio_blog_post/within_dataset.svg" style="display:block; margin-left: auto; margin-right: auto;" title="caption" />
     <span class="img_caption" style="display: block; text-align: center;">Figure 4: An example of meta-train, validation and testing, using a bird song dataset like BirdClef2020. Icons are used to more visually demonstrate the possible classes and how they relate to one another. </span>
 </span>
-figure for here 
+
+In general we found that gradient-based learners like [MAML](https://arxiv.org/abs/1703.03400) and [Meta-Curvature](https://arxiv.org/abs/1902.03356) outperformed both the baseline models and metric learners. 
+
+| **Dataset**                     | **FO-MAML**     | **FO-Meta-Curvature** | **ProtoNets** | **SimpleShot CL2N** | **Meta_baseline** |
+|:----------------------------:|:---------------:|:-----------------:|:-----------------:|:----------:|:-----------------:|
+
+| ESC-50                      | 74.66 ± 0.42 | **76.17 ± 0.41** | 68.83 ± 0.38 | 68.82 ± 0.39 |  71.72 ± 0.38 |
+| NSynth                       | 93.85 ± 0.24 |**96.47 ± 0.19**| 95.23 ± 0.19 |90.04 ± 0.27| 90.74 ± 0.25
+| FSDKaggle18                 | **43.45 ± 0.46**| 43.18 ± 0.45| 39.44 ± 0.44 |42.03 ± 0.42 |40.27 ± 0.44 
+| VoxCeleb1                   | 60.89 ± 0.45| **63.85 ± 0.44** |59.64 ± 0.44 |48.50 ± 0.42 |55.54 ± 0.42
+| BirdCLEF 2020 (Pruned)       |  56.26 ± 0.45 |**61.34 ± 0.46**| 56.11 ± 0.46| 57.66 ± 0.43| 57.28 ± 0.41
+
 
 ### Joint Training
 #### Within Dataset Sampling
