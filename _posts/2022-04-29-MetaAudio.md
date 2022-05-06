@@ -101,6 +101,8 @@ In general we found that gradient-based (GBML) learners like [MAML](https://arxi
 | FSDKaggle18                  | **43.45 ± 0.46**| 43.18 ± 0.45          | 39.44 ± 0.44  |42.03 ± 0.42         |40.27 ± 0.44       |
 | VoxCeleb1                    | 60.89 ± 0.45    | **63.85 ± 0.44**      |59.64 ± 0.44   |48.50 ± 0.42         |55.54 ± 0.42       |
 | BirdCLEF 2020 (Pruned)       |  56.26 ± 0.45   |**61.34 ± 0.46**       | 56.11 ± 0.46  | 57.66 ± 0.43        | 57.28 ± 0.41      |
+|Avg Algorithm Rank            |2.4              |1.2                    |3.8            |4.0                  |3.6                |
+
 
 This is immediately in contrast with the performance comparisons shown in the [SimpleShot](https://arxiv.org/abs/1911.04623) work with images, where the simple baseline was able to beat out a variety of GBML approaches. Specifically we observe Meta-Curavture performing strongest on 4/5 datasets, with MAML taking the final 1/5. We propose that this is due to the GBML methods’ adaption mechanism, updating feature representation at each meta-test episode, making them particularly useful for tasks with high inter-class/episode variance. Meanwhile the others must rely on a fixed feature extractor that cannot adapt to each unique episode
 
@@ -119,7 +121,20 @@ We indentified two distinct ways to train with all datasets simultaneously, one 
     <span class="img_caption" style="display: block; text-align: center;">Figure 6:  </span>
 </span>
 
-Comparing the performance of both sampling techniques against within-dataset evaluation, we see a general degradation of performance, with only ESC-50 and Kaggle18 improving (both from free dataset sampling). The difference varies heavily in magnitude between both the datasets and sampling routine used alike. The generally mixed results here mirror other studies (full references in paper) and reflect the tradeoff between generally increasing the amount of training data available and the increased difficulty of learning a single model capable of simultaneous high performance on diverse data domains. This is some evidence that MetaAudio compliments existing works in providing a challenging benchmark to test future meta-learners' ability to fit diverse audio types, as well as enabling few-shot recognition of new categories. 
+Comparing the performance of both sampling techniques against within-dataset evaluation, we see a general degradation of performance, with only ESC-50 and Kaggle18 improving (both from free dataset sampling). The difference varies heavily in magnitude between both the datasets and sampling routine used alike. 
+
+| **Dataset**                     | **FO-MAML**     | **FO-Meta-Curvature** | **ProtoNets** | **SimpleShot CL2N** | **Meta_baseline** |
+|:----------------------------:|:---------------:|:-----------------:|:-----------------:|:----------:|:-----------------:|
+| ESC-50                      |  68.68 ± 0.45 |72.43 ± 0.44 |61.49 ± 0.41| 59.31 ± 0.40 |62.79 ± 0.40
+| NSynth                       | 81.54 ± 0.39 |82.22 ± 0.38 |78.63 ± 0.36 |89.66 ± 0.41 |85.17 ± 0.31
+| FSDKaggle18                 | 39.51 ± 0.44 |41.22 ± 0.45| 36.22 ± 0.40 |37.80 ± 0.40 |34.04 ± 0.40
+| VoxCeleb1                   | 51.41 ± 0.43 |51.37 ± 0.44| 50.74 ± 0.41| 40.14 ± 0.41| 39.18 ±0.39
+| BirdCLEF 2020 (Pruned)       |  47.69 ± 0.45 |47.39 ± 0.46| 46.49 ± 0.43| 35.69 ± 0.40 |37.40 ± 0.40
+| Watkins                      | 57.75 ± 0.47| 57.76 ± 0.47| 49.16 ± 0.43| 52.73 ± 0.43| 52.09 ± 0.43
+| SpeechCommands V1 |25.09 ± 0.40 |26.33 ± 0.41| 24.31 ± 0.36 |24.99 ± 0.35| 24.18 ± 0.36
+|Avg Algorithm Rank |2.0| **1.6** |4.0 |3.4| 4.0
+
+The generally mixed results here mirror other studies (full references in paper) and reflect the tradeoff between generally increasing the amount of training data available and the increased difficulty of learning a single model capable of simultaneous high performance on diverse data domains. This is some evidence that MetaAudio compliments existing works in providing a challenging benchmark to test future meta-learners' ability to fit diverse audio types, as well as enabling few-shot recognition of new categories. 
 
 
 
