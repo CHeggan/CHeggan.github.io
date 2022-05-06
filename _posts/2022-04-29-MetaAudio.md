@@ -108,5 +108,3 @@ Data augmentation was not used
 
 ## Reproduction & Use
 
-
-<>  images/MetaAudio_blog_post/
