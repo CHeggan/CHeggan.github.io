@@ -122,7 +122,7 @@ The general idea for our joint training experiments is to train concurrently on 
     <span class="img_caption" style="display: block; text-align: center;">Figure 5:  </span>
 </span>
 
-We indentified two distinct ways to train with all datasets simultaneously, one where any individual task can only contain supports and queries from one of the included datasets (which we call **within dataset sampling**), and one in which samples contained within a class are unconstrained (**free dataset sampling**). 
+We indentified two distinct ways to train with all datasets simultaneously, one where any individual task can only contain supports and queries from one of the included datasets (which we call **within dataset sampling**), and one in which samples contained within a task are unconstrained (**free dataset sampling**). 
 
 <span class="img_container center" style="display: block;">
     <img alt="test" src="/images/MetaAudio_blog_post/Joint Train - Free Sampling.svg" style="display:block; margin-left: auto; margin-right: auto;" title="caption" />
@@ -174,4 +174,6 @@ For the held-out cross-dataset tasks (Watkins, SpechCommands V1), we also see th
 
 
 ## Reproduction & Use
+
+## Conclusion
 
