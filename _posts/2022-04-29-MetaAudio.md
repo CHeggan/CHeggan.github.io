@@ -119,14 +119,14 @@ The general idea for our joint training experiments is to train concurrently on 
 
 <span class="img_container center" style="display: block;">
     <img alt="test" src="/images/MetaAudio_blog_post/joint_train_not_mixed.svg" style="display:block; margin-left: auto; margin-right: auto;" title="caption" />
-    <span class="img_caption" style="display: block; text-align: center;">Figure 5:  </span>
+    <span class="img_caption" style="display: block; text-align: center;">Figure 5: Joint training scenario with within dataset sampling. Can see that individual meta-train tasks are still confined to containing classes from one dataset. Meta-test for each set is the same meta-test found in within dataset generalisation. </span>
 </span>
 
 We indentified two distinct ways to train with all datasets simultaneously, one where any individual task can only contain supports and queries from one of the included datasets (which we call **within dataset sampling**), and one in which samples contained within a task are unconstrained (**free dataset sampling**). 
 
 <span class="img_container center" style="display: block;">
     <img alt="test" src="/images/MetaAudio_blog_post/Joint Train - Free Sampling.svg" style="display:block; margin-left: auto; margin-right: auto;" title="caption" />
-    <span class="img_caption" style="display: block; text-align: center;">Figure 6:  </span>
+    <span class="img_caption" style="display: block; text-align: center;">Figure 6: Joint training scenario with free dataset sampling. Meta-train tasks can now contain classes from more than one dataset and are unconfined. Meta-test for each set is the same meta-test found in within dataset generalisation and joint training with within dataset sampling. </span>
 </span>
 
 Comparing the performance of both sampling techniques against within-dataset evaluation, we see a general degradation of performance, with only ESC-50 and Kaggle18 improving (both from free dataset sampling). The difference varies heavily in magnitude between both the datasets and sampling routine used alike. 
@@ -163,17 +163,23 @@ The generally mixed results here mirror other studies (full references in paper)
 | SpeechCommands V1 |**27.29 ± 0.42**| 26.56 ± 0.42| 24.30 ± 0.35 |24.74 ± 0.35 |23.88 ± 0.35|
 |Avg Algorithm Rank |**2.1**| **2.1** |3.4 |3.0| 4.3|
 
-Additionally, we contrast how the joint training episode sampling routines compare. For our main datasets, we observe 3/5 of the top results were obtained using the free sampling method, with the 2 outliers belonging to VoxCeleb and BirdClef - evidence that their tasks require significantly different and specific model parametrisation, as the within dataset task sampling would allow more opportunity to learn these more specialised features.
+Additionally, we contrast how the joint training episode sampling routines compare. For our main datasets, we observe 3/5 of the top results were obtained using the free sampling method, with the 2 outliers belonging to VoxCeleb and BirdClef - evidence that their tasks require significantly different and specific model parameterisation, as the within dataset task sampling would allow more opportunity to learn these more specialised features.
 
 
 ### Joint Training to Cross-Dataset
-For the held-out cross-dataset tasks (Watkins, SpechCommands V1), we also see the strongest performance coming from the free sampling routine, where it outperforms its within dataset counterpart by ∼2% in both held-out sets. As for the absolute performances obtained on the held-out sets, we see that our joint training transfers somewhat-effectively, with the model in one case attaining a respectable 50-60% and another obtaining accuracies only 5% above random.
+For the held-out cross-dataset tasks (Watkins, SpeechCommands V1), we also see the strongest performance coming from the free sampling routine, where it outperforms its within dataset counterpart by ∼2% in both held-out sets. As for the absolute performances obtained on the held-out sets, we see that our joint training transfers somewhat-effectively, with the model in one case attaining a respectable 50-60% and another obtaining accuracies only 5% above random.
 
 ### Massive Pre-Train
+A full meta-learning pipeline for a specific dataset can be expensive. Transferring some pre-trained feature extractor and using a cheap linear classifier for each task could be cheaper due to the spreading of cost over multiple downstream tasks. In this direction we employed Audio Spectrogram Transformers from [this work](https://arxiv.org/abs/2104.01778), which were trained on the large ImageNet and AudioSet datasets. On top of the features that we obtained form these models, we applied both nearest centroid and linear SVM classification. 
+
+
+
 
 
 
 ## Reproduction & Use
+This work aims to be a benchmark upon which people cna build and improve, in that sense we outline how to best use MetaAudio. 
+
 
 ## Conclusion
 
