@@ -172,7 +172,17 @@ For the held-out cross-dataset tasks (Watkins, SpeechCommands V1), we also see t
 ### Massive Pre-Train
 A full meta-learning pipeline for a specific dataset can be expensive. Transferring some pre-trained feature extractor and using a cheap linear classifier for each task could be cheaper due to the spreading of cost over multiple downstream tasks. In this direction we employed Audio Spectrogram Transformers from [this work](https://arxiv.org/abs/2104.01778), which were trained on the large ImageNet and AudioSet datasets. On top of the features that we obtained form these models, we applied both nearest centroid and linear SVM classification. 
 
-
+|              |                 | AST ImageNet                       ||  AST ImageNet & AudioSet                       ||
+|              | Dataset         | SVM  | SimpleShot CL2N              | SVM  | SimpleShot CL2N  | SimpleShot (CL2N) from Table 2|
+|==============|-----------------|----------------|----------------|----------------|----------------|
+| ESC-50                      |  |
+| NSynth                       | |
+| FSDKaggle18                 |  |
+| VoxCeleb1                   | |
+| BirdCLEF 2020 (Pruned)       | |
+| Watkins                      | |
+| SpeechCommands V1 ||
+|Avg Algorithm Rank ||
 
 
 
