@@ -176,7 +176,7 @@ A full meta-learning pipeline for a specific dataset can be expensive. Transferr
     Table 5: Massive Pre-training to linear classifier
 </p>
 
-|                 | AST ImageNet                       ||  AST ImageNet & AudioSet                       || From Table 2 ||
+|                 | AST ImageNet                       ||  AST ImageNet & AudioSet                       || From Table 2 |
 | Dataset         | SVM  | SimpleShot CL2N              | SVM  | SimpleShot CL2N  | SimpleShot (CL2N)|
 |:----------------------------:|:---------------:|:-----------------:|:-----------------:|:----------:|:-----------------:|
 | ESC-50                      |  61.12 ± 0.41 |60.41 ± 0.41| 61.61 ± 0.41| 64.48 ± 0.41| 68.82 ± 0.39 |
