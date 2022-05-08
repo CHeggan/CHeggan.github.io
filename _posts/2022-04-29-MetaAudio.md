@@ -184,14 +184,27 @@ A full meta-learning pipeline for a specific dataset can be expensive. Transferr
 | FSDKaggle18                 | 34.01 ± 0.40 |33.52 ± 0.39| 38.38 ± 0.41| 38.76 ± 0.41| **42.03 ± 0.42** |
 | VoxCeleb1                   |27.26 ± 0.36| 28.09 ± 0.37| 27.45 ± 0.36| 28.79 ± 0.38| **48.50 ± 0.42** |
 | BirdCLEF 2020 (Pruned)       | 30.84 ± 0.37| 33.04 ± 0.41| 33.17 ± 0.38| 36.41 ± 0.42 |**57.66 ± 0.43**|
-| Avg Rank |4.2| 3.8| 3.6| 2.4| 1.0|
+| Avg Rank |4.2| 3.8| 3.6| 2.4| **1.0**|
 | Watkins                      |**55.91 ± 0.42** |55.40 ± 0.42| 51.46 ± 0.42| 51.81 ± 0.42 | N/A|
 | SpeechCommands V1 | 26.24 ± 0.36 |26.46 ± 0.37| **30.69 ± 0.38**| 30.24 ± 0.38| N/A |
 |Avg Rank |2.5| 2.5| 2.5| 2.5| N/A|
 
+These results reveal a few interesting insights. Firstly and perhaps unsurprisingly, we observe that the features pre-trained on both AudioSet and ImageNet outperform those trained on ImageNet alone. The small margin between these however is perhaps surprising, showing that image-derived features provide most of the information needed to interpret spectrograms.  
+
+Comparing these results to the in-domain training presented in Table 2, we observe substantial performance drops across teh bard, with the possible exceptions of ESC-50 and Kaggle18. In their best cases, NSynth, VoxCeleb and BirdClef all take drops in performance of ∼20% due to dataset shift between general purpose pre-training and our specific tasks, such as musical instruments, speech or bird song recognition. While the performance hit due to domain-shift is expected, these results are surprising as AudioSet is a much larger dataset, and the AST transformer is a much larger architecture than the CRNN used in Table 2. Within the image domain, comparable experimental settings show a clear win by simply applying larger pre-raining datasets and models along with simple readouts, compared to conducting within-domain meta-learning. This confirms the value of Meta-Audio as an important benchmark for assessing meta-learning contributions that cannot easily be replicated by larger architectures and more data. Performance on our held-out sets shows a more mixed set of results, with ImageNet only pre-training favouring Watkins, and ImageNet + AudioSet pre-training setting a new SOTA for SpeechCommands.
 
 ## Reproduction & Use
-This work aims to be a benchmark upon which people cna build and improve, in that sense we outline how to best use MetaAudio. 
+This work aims to be a benchmark upon which people can build and improve, in that sense we outline how to best use MetaAudio. There are two main ways this benchmark can be approached. One in which new ideas are actively being tested, and one in which reproduction and/or immediate extensions to MetaAudio is the goal. Both of these goals start with the [code repo](https://github.com/CHeggan/MetaAudio-A-Few-Shot-Audio-Classification-Benchmark) available for MetaAudio. 
+
+### Testing New Ideas
+If simply testing new ideas against this benchmark, then following this format should work:
+ - Obtain the datasets of interest (sources can be found [here](https://github.com/CHeggan/MetaAudio-A-Few-Shot-Audio-Classification-Benchmark/tree/main/Dataset%20Processing)) - We recommend testing and reporting with all of the datasets to avoid claims of selection bias 
+ - Go through the dataset preprocessing pipelines (.wav -> .npy raw -> .npy spec). All of the code for this as well as detailed descriptions of the scripts can be found [here](https://github.com/CHeggan/MetaAudio-A-Few-Shot-Audio-Classification-Benchmark/tree/main/Dataset%20Processing. Note that some datasets like BirdClef & Watkins require an additional step of cleaning
+ - Obtain the .npy class split files from [here](https://github.com/CHeggan/MetaAudio-A-Few-Shot-Audio-Classification-Benchmark/tree/main/Dataset%20Splits). Unless doing specific experiments with sample length and meta-data, we strongly recommend using the so-called 'Baseline Splits'
+ - If you already have some few-shot sampler for classification tasks that is set to sample from a folder-of-class-folders structure, then this should be all that is required from the MetaAudio repo. If this sampler is missing however, custom built classes can be found [here](https://github.com/CHeggan/MetaAudio-A-Few-Shot-Audio-Classification-Benchmark/tree/main/Examples/MAML_ESC/dataset_)
+- The evaluation metric used in MetaAudio is the average and 95% confidence interval taken over 10,000 randomly sampled tasks from the meta-test set. For fair and easy comparison, we recommend this to other researchers
+
+### Reproduction & Immediate Extensions
 
 
 ## Conclusion
