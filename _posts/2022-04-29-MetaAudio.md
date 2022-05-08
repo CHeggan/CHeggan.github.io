@@ -172,17 +172,23 @@ For the held-out cross-dataset tasks (Watkins, SpeechCommands V1), we also see t
 ### Massive Pre-Train
 A full meta-learning pipeline for a specific dataset can be expensive. Transferring some pre-trained feature extractor and using a cheap linear classifier for each task could be cheaper due to the spreading of cost over multiple downstream tasks. In this direction we employed Audio Spectrogram Transformers from [this work](https://arxiv.org/abs/2104.01778), which were trained on the large ImageNet and AudioSet datasets. On top of the features that we obtained form these models, we applied both nearest centroid and linear SVM classification. 
 
+<p align="center">
+    Table 5: Massive Pre-training to linear classifier
+</p>
+
 |                 | AST ImageNet                       ||  AST ImageNet & AudioSet                       || From Table 2 ||
 | Dataset         | SVM  | SimpleShot CL2N              | SVM  | SimpleShot CL2N  | SimpleShot (CL2N)|
 |==============|-----------------|----------------|----------------|----------------|
-| ESC-50                      |  |
-| NSynth                       | |
-| FSDKaggle18                 |  |
-| VoxCeleb1                   | |
-| BirdCLEF 2020 (Pruned)       | |
-| Watkins                      | |
-| SpeechCommands V1 ||
-|Avg Algorithm Rank ||
+| ESC-50                      |  61.12 ± 0.41 |60.41 ± 0.41| 61.61 ± 0.41| 64.48 ± 0.41| 68.82 ± 0.39 |
+| NSynth                       | 64.26 ± 0.41| 66.68 ± 0.41 |62.62 ± 0.42| 63.78 ± 0.42| 90.04 ± 0.27|
+| FSDKaggle18                 | 34.01 ± 0.40 |33.52 ± 0.39| 38.38 ± 0.41| 38.76 ± 0.41| 42.03 ± 0.42 |
+| VoxCeleb1                   |27.26 ± 0.36| 28.09 ± 0.37| 27.45 ± 0.36| 28.79 ± 0.38| 48.50 ± 0.42 |
+| BirdCLEF 2020 (Pruned)       | 30.84 ± 0.37| 33.04 ± 0.41| 33.17 ± 0.38| 36.41 ± 0.42 |57.66 ± 0.43|
+| Avg Rank |4.2| 3.8| 3.6| 2.4| 1.0|
+| Watkins                      |55.91 ± 0.42 |55.40 ± 0.42| 51.46 ± 0.42| 51.81 ± 0.42 | N/A|
+| SpeechCommands V1 | 26.24 ± 0.36 |26.46 ± 0.37| 30.69 ± 0.38| 30.24 ± 0.38| N/A |
+|Avg Rank |2.5| 2.5| 2.5| 2.5| N/A|
+|
 
 
 
