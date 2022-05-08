@@ -178,7 +178,7 @@ A full meta-learning pipeline for a specific dataset can be expensive. Transferr
 
 |                 | AST ImageNet                       ||  AST ImageNet & AudioSet                       || From Table 2 ||
 | Dataset         | SVM  | SimpleShot CL2N              | SVM  | SimpleShot CL2N  | SimpleShot (CL2N)|
-|==============|-----------------|----------------|----------------|----------------|
+|==============|-----------------/---------------/----------------/----------------/----------------/
 | ESC-50                      |  61.12 ± 0.41 |60.41 ± 0.41| 61.61 ± 0.41| 64.48 ± 0.41| 68.82 ± 0.39 |
 | NSynth                       | 64.26 ± 0.41| 66.68 ± 0.41 |62.62 ± 0.42| 63.78 ± 0.42| 90.04 ± 0.27|
 | FSDKaggle18                 | 34.01 ± 0.40 |33.52 ± 0.39| 38.38 ± 0.41| 38.76 ± 0.41| 42.03 ± 0.42 |
@@ -188,9 +188,6 @@ A full meta-learning pipeline for a specific dataset can be expensive. Transferr
 | Watkins                      |55.91 ± 0.42 |55.40 ± 0.42| 51.46 ± 0.42| 51.81 ± 0.42 | N/A|
 | SpeechCommands V1 | 26.24 ± 0.36 |26.46 ± 0.37| 30.69 ± 0.38| 30.24 ± 0.38| N/A |
 |Avg Rank |2.5| 2.5| 2.5| 2.5| N/A|
-|
-
-
 
 
 ## Reproduction & Use
