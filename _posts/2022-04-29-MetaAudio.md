@@ -205,7 +205,10 @@ If simply testing new ideas against this benchmark, then following this format s
 - The evaluation metric used in MetaAudio is the average and 95% confidence interval taken over 10,000 randomly sampled tasks from the meta-test set. For fair and easy comparison, we recommend this to other researchers
 
 ### Reproduction & Immediate Extensions
-
-
+Generally reproduction and immediate extensions will require the use of more of the code base than just benchmarking. Starting off, the steps outlined in the 'Testing New Ideas' should be followed. This wil end in having all of the dataset properly processed and setup for experimental work. On top of this these steps may be helpful in starting off:
+ - Environment replication. Within the main README file [here](https://github.com/CHeggan/MetaAudio-A-Few-Shot-Audio-Classification-Benchmark), the enrichment file and instructions on how to load it into conda can be found
+ - Examples of some experiments can be found [here](https://github.com/CHeggan/MetaAudio-A-Few-Shot-Audio-Classification-Benchmark/tree/main/Examples). These include MAML for ESC-50 and ProtoNets for Kaggle18
+ - The code included in the example experiments should be sufficient for both reproduction and code add-ons/extra experiments
+ 
 ## Conclusion
 
