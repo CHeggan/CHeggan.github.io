@@ -11,6 +11,11 @@ tags:
 
 'MetaAudio: A Few-Shot Classification Benchmark' was released in early April. It contains a variety of benchmark results for researchers to beat in the future. This blog aims to be a more easily digestible breakdown of the work. All of the code for MetaAudio can be found [here](https://github.com/CHeggan/MetaAudio-A-Few-Shot-Audio-Classification-Benchmark)
 
+<span class="img_container center" style="display: block;">
+    <img alt="test" src="/images/MetaAudio_blog_post/MetaAudio Logo_squared.svg" style="display:block; margin-left: auto; margin-right: auto;" title="caption" />
+    <span class="img_caption" style="display: block; text-align: center;"></span>
+</span>
+
 ## Aims of the Work
 As it currently stands, the majority of work focusing on few-shot learning exists within computer vision. MetaAudio aims to be an accompanying benchmark to those that already exist, hopefully reducing algorithmic bias toward the image domain. To provide this, we investigate a variety of experimental settings, drawing parallels where possible to existing benchmarks. 
 
