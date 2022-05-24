@@ -33,7 +33,7 @@ Skills
   * TensorFlow
   * Sklearn
   * SciPy
-* Porgramming
+* Programming
   * Python
   * R
   * MATLAB
