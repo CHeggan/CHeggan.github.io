@@ -3,7 +3,7 @@ title: "MetaAudio: A Few-Shot Audio Classification Benchmark"
 collection: publications
 permalink: /publication/2009-10-01-paper-title-number-1
 excerpt: 'This paper establishes a novel few-shot audio classification benchmark'
-date: 2022-04-03
+date: 2022-05-31
 venue: 'arXiv Preprint'
 paperurl: 'https://arxiv.org/abs/2204.02121'
 citation: 'Heggan, Calum, et al. "MetaAudio: A Few-Shot Audio Classification Benchmark." arXiv preprint arXiv:2204.02121 (2022).'
