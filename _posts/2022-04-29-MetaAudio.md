@@ -1,6 +1,6 @@
 ---
 title: 'MetaAudio: A Benchmark Breakdown'
-date: 2022-04-29
+date: 2022-05-31
 permalink: /posts/2022/04/MetaAudio_blog/
 tags:
   - few-shot learning
@@ -63,7 +63,7 @@ Pre-processing was kept simple with only a few major steps. The first of these w
 For the final normalisation on the sampled spectrograms we performed some prior experimentation, looking specifically at at per-sample, channel-wise and global. In general both channel and global performed similarly, with each taking the edge in some cases. For simplicity we opted to use global normalisation across all samples and experiments in the work. 
 
 ##### Variable Length Samples 
-For variable length samples we first split the raw audio clip into *L* second sub-clips before later converting each to log-mel spectrograms. All of these sub-clips are then stacked and stored as one single file, which can be later sampled. If any sub-clips is less than *L* we repeat the clip and clip to the required length. The exact value of *L* is left as a hyperparameter which we investigate the effects of, however For the majority of the experiments in this version of MetaAudio it is set to 5 seconds, primarily to aid joint training and cross-dataset experimentation. All of this processing is done entirely offline, similarly to teh fixed length setting. 
+For variable length samples we first split the raw audio clip into *L* second sub-clips before later converting each to log-mel spectrograms. All of these sub-clips are then stacked and stored as one single file, which can be later sampled. If any sub-clips is less than *L* we repeat the clip and clip to the required length. The exact value of *L* is left as a hyperparameter which we investigate the effects of, however For the majority of the experiments in this version of MetaAudio it is set to 5 seconds, primarily to aid joint training and cross-dataset experimentation. All of this processing is done entirely offline, similarly to the fixed length setting. 
 
 <span class="img_container center" style="display: block;">
     <img alt="test" src="/images/MetaAudio_blog_post/variable_spec_raw.svg" style="display:block; margin-left: auto; margin-right: auto;" title="caption" />
@@ -94,7 +94,7 @@ Motivated by the increasing performance gaps between basic CNNs and sequentially
 methods, 64. 
 
 ### Within Dataset Evaluation
-The first ste of experiments carried out looked at within dataset meta-training, validation and testing. How this class-wise split is formatted is demonstrated in Figure 4. This type of pipeline is teh most specific and computationally heavy, as each dataset has a model trained for it and it alone. Generally this goes against goals of generalised representation learners, however provides us with a strong baseline of performance for each of the datasets and algorithms. 
+The first ste of experiments carried out looked at within dataset meta-training, validation and testing. How this class-wise split is formatted is demonstrated in Figure 4. This type of pipeline is the most specific and computationally heavy, as each dataset has a model trained for it and it alone. Generally this goes against goals of generalised representation learners, however provides us with a strong baseline of performance for each of the datasets and algorithms. 
 
 <span class="img_container center" style="display: block;">
     <img alt="test" src="/images/MetaAudio_blog_post/within_dataset.svg" style="display:block; margin-left: auto; margin-right: auto;" title="caption" />
@@ -196,7 +196,7 @@ A full meta-learning pipeline for a specific dataset can be expensive. Transferr
 
 These results reveal a few interesting insights. Firstly and perhaps unsurprisingly, we observe that the features pre-trained on both AudioSet and ImageNet outperform those trained on ImageNet alone. The small margin between these however is perhaps surprising, showing that image-derived features provide most of the information needed to interpret spectrograms.  
 
-Comparing these results to the in-domain training presented in Table 2, we observe substantial performance drops across teh bard, with the possible exceptions of ESC-50 and Kaggle18. In their best cases, NSynth, VoxCeleb and BirdClef all take drops in performance of ∼20% due to dataset shift between general purpose pre-training and our specific tasks, such as musical instruments, speech or bird song recognition. While the performance hit due to domain-shift is expected, these results are surprising as AudioSet is a much larger dataset, and the AST transformer is a much larger architecture than the CRNN used in Table 2. Within the image domain, comparable experimental settings show a clear win by simply applying larger pre-raining datasets and models along with simple readouts, compared to conducting within-domain meta-learning. This confirms the value of Meta-Audio as an important benchmark for assessing meta-learning contributions that cannot easily be replicated by larger architectures and more data. Performance on our held-out sets shows a more mixed set of results, with ImageNet only pre-training favouring Watkins, and ImageNet + AudioSet pre-training setting a new SOTA for SpeechCommands.
+Comparing these results to the in-domain training presented in Table 2, we observe substantial performance drops across the board, with the possible exceptions of ESC-50 and Kaggle18. In their best cases, NSynth, VoxCeleb and BirdClef all take drops in performance of ∼20% due to dataset shift between general purpose pre-training and our specific tasks, such as musical instruments, speech or bird song recognition. While the performance hit due to domain-shift is expected, these results are surprising as AudioSet is a much larger dataset, and the AST transformer is a much larger architecture than the CRNN used in Table 2. Within the image domain, comparable experimental settings show a clear win by simply applying larger pre-raining datasets and models along with simple readouts, compared to conducting within-domain meta-learning. This confirms the value of Meta-Audio as an important benchmark for assessing meta-learning contributions that cannot easily be replicated by larger architectures and more data. Performance on our held-out sets shows a more mixed set of results, with ImageNet only pre-training favouring Watkins, and ImageNet + AudioSet pre-training setting a new SOTA for SpeechCommands.
 
 ## Reproduction & Use
 This work aims to be a benchmark upon which people can build and improve, in that sense we outline how to best use MetaAudio. There are two main ways this benchmark can be approached. One in which new ideas are actively being tested, and one in which reproduction and/or immediate extensions to MetaAudio is the goal. Both of these goals start with the [code repo](https://github.com/CHeggan/MetaAudio-A-Few-Shot-Audio-Classification-Benchmark) available for MetaAudio. 
