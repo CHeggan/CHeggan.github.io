@@ -15,8 +15,8 @@ Alongside the topics mentioned above, my research interests include meta-learnin
 
 <span style="color:purple"> News </span> **Conferences** [MetaAudio](https://arxiv.org/abs/2204.02121) accepted to ICANN22. To be presented in early September<br/>
 <span style="color:blue"> News </span> **Publications** [MetaAudio](https://arxiv.org/abs/2204.02121), the first few-shot audio classification benchmark is now live on arXiv and submitted to ICANN22<br/>
-<span style="color:red"> News </span> **Talk** Presented an introduction to meta and few-shot learning at IDCOM<br/>
-<span style="color:red"> News </span> **Talk** Presented preliminary research to Thales UK research group <br/>
+<span style="color:red"> News </span> **Talks** Presented an introduction to meta and few-shot learning at IDCOM<br/>
+<span style="color:red"> News </span> **Talks** Presented preliminary research to Thales UK research group <br/>
 {: .notice}
 
 
