@@ -13,10 +13,10 @@ Currently researching within the fields of <b>Few-Shot Machine Learning </b> and
 Alongside the topics mentioned above, my research interests include meta-learning and unsupervised learning, and how they apply to a variety of downstream tasks and domains.
 
 
-<span style="color:purple"> News </span> **Conferences** [MetaAudio](https://arxiv.org/abs/2204.02121) accepted to ICANN22. To be presented in early September<br/>
-<span style="color:blue"> News </span> **Publications** [MetaAudio](https://arxiv.org/abs/2204.02121), the first few-shot audio classification benchmark is now live on arXiv and submitted to ICANN22<br/>
-<span style="color:red"> News </span> **Talks** Presented an introduction to meta and few-shot learning at IDCOM<br/>
-<span style="color:red"> News </span> **Talks** Presented preliminary research to Thales UK research group <br/>
+<span style="color:purple"> **Conferences** </span> MetaAudio accepted to ICANN22. To be presented in early September<br/>
+<span style="color:blue"> **Publications** </span> [MetaAudio](https://arxiv.org/abs/2204.02121), the first few-shot audio classification benchmark is now live on arXiv and submitted to ICANN22<br/>
+<span style="color:red"> **Talks** </span> Presented an introduction to meta and few-shot learning at IDCOM<br/>
+<span style="color:red"> **Talks** </span> Presented preliminary research to Thales UK research group <br/>
 {: .notice}
 
 
