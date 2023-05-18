@@ -13,7 +13,7 @@ Currently researching within the fields of <b>Few-Shot Machine Learning </b>, <b
 Alongside the mentioned topics, my research interests also include meta-learning and unsupervised learning, and how they apply to a variety of downstream tasks and domains.
 
 <span style="color:purple"> **Conferences** </span> MT-SLVR (A new multi-task representation learning approach) is accepted to InterSpeech23. To be released soon, and formally presented in August 2023<br/>
-<span style="color:orange"> **Workshops** </span> Co-hosted an international Few-Shot Learning workshop for Thales UK's "FoundAItion" (5/5/23)<br/>
+<span style="color:green"> **Workshops** </span> Co-hosted an international Few-Shot Learning workshop for Thales UK's "FoundAItion" (5/5/23)<br/>
 <span style="color:red"> **Talks** </span> MetaAudio presented at ICANN22 Session 2 (6/9/22)<br/>
 <span style="color:purple"> **Conferences** </span> MetaAudio accepted to ICANN22. To be presented in early September<br/>
 <span style="color:blue"> **Publications** </span> [MetaAudio](https://arxiv.org/abs/2204.02121), the first few-shot audio classification benchmark is now live on arXiv and submitted to ICANN22<br/>
