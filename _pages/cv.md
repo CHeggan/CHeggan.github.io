@@ -11,20 +11,22 @@ redirect_from:
 
 Education
 ======
+* Ph.D in Frugal Machine Learning, University Of Edinburgh (Expected finish Autumn 2024)
 * MPhys, University Of Edinburgh, 2020
-* Ph.D in Frugal Machine Learning, University Of Edinburgh, 2024 (expected)
 
 Research Experience
 ======
+* 2020: Masters Project
+  * Title: Electride Phases and Host-Guest lattices of Group V Elements
+  * Duties included: Simulation work with the VASP package using a variety of high performance computing resources (ARCHER, Thomas)
+  * Supervisor: Andreas Hermann
+
 * 2019: Senior Honours Project
   * Title: X-Ray Diffraction from Crystals with Realistic Charge Distributions
   * Duties included: Simulation of high pressure phase transitions of Magnesium using the Wien2k package
   * Supervisor: Ingo Loa
 
-* 2020: Masters Project
-  * Title: Electride Phases and Host-Guest lattices of Group V Elements
-  * Duties included: Simulation work with the VASP package using a variety of high performance computing resources (ARCHER, Thomas)
-  * Supervisor: Andreas Hermann
+
   
 Skills
 ======
@@ -33,11 +35,11 @@ Skills
   * TensorFlow
   * Sklearn
   * SciPy
+  * NumPy
 * Programming
   * Python
   * R
-  * MATLAB
-  * SQL
+  * Java
 
 Publications
 ======
