@@ -10,6 +10,8 @@ redirect_from:
 
 Currently researching within the fields of <b>Few-Shot Machine Learning </b> and <b>Self-Supervised Representation Learning </b>, I am a 4th year PhD candidate at the <b>University of Edinburgh</b> working with both the IPAB and IDCOM groups. I work alongside [Mehrdad Yaghoobi (Singal Processing)](https://scholar.google.com/citations?user=ljyqX34AAAAJ&hl=en&oi=ao), [Timothy Hospedales (Informatics)](https://scholar.google.com/citations?user=nHhtvqkAAAAJ&hl=en) and Sam Budgett (Thales UK). 
 
+I am currently looking for jobs and open to opportunities. Please get in contact if you would like to discuss. 
+
 Alongside the mentioned topics, my research interests also include meta-learning and anomaly detection, and how they apply to a variety of downstream tasks and domains.
 
 <span style="color:pink"> **Other** </span> Started writing Thesis <br/>
