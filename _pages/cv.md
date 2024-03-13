@@ -40,7 +40,7 @@ Publications
 
 Talks
 ======
-* Throughout my PhD I have given a wide variety of talks (approximately 30), some of these include:
+Throughout my PhD I have given a wide variety of talks (approximately 30), some of these include:
   <ul>{% for post in site.talks %}
     {% include archive-single-talk-cv.html %}
   {% endfor %}</ul>
