@@ -8,20 +8,26 @@ redirect_from:
   - /about.html
 ---
 
-Currently researching within the fields of <b>Few-Shot Machine Learning </b>, <b>Representation Learning </b> and <b>Anomaly Detection</b>, I am a 3rd year PhD candidate at the <b>University of Edinburgh</b> working with both the IPAB and IDCOM groups. I work alongside [Mehrdad Yaghoobi (Singal Processing)](https://scholar.google.com/citations?user=ljyqX34AAAAJ&hl=en&oi=ao), [Timothy Hospedales (Informatics)](https://scholar.google.com/citations?user=nHhtvqkAAAAJ&hl=en) and Sam Budgett (Thales UK). 
+Currently researching within the fields of <b>Few-Shot Machine Learning </b> and <b>Self-Supervised Representation Learning </b>, I am a 4th year PhD candidate at the <b>University of Edinburgh</b> working with both the IPAB and IDCOM groups. I work alongside [Mehrdad Yaghoobi (Singal Processing)](https://scholar.google.com/citations?user=ljyqX34AAAAJ&hl=en&oi=ao), [Timothy Hospedales (Informatics)](https://scholar.google.com/citations?user=nHhtvqkAAAAJ&hl=en) and Sam Budgett (Thales UK). 
 
-Alongside the mentioned topics, my research interests also include meta-learning and unsupervised learning, and how they apply to a variety of downstream tasks and domains.
+Alongside the mentioned topics, my research interests also include meta-learning and anomaly detection, and how they apply to a variety of downstream tasks and domains.
 
+
+
+<span style="color:red"> ** Conference Presentations** </span> MT-SLVR presented at INTERSPEECH 23<br/>
 <span style="color:blue"> **Publications** </span> [MT-SLVR](https://arxiv.org/abs/2305.17191) and its relevant code are officially released <br/>
-<span style="color:red"> **Talks** </span> Presented work at Thales PhD and Thales PCC days (April/May 2023)<br/>
 <span style="color:purple"> **Conferences** </span> MT-SLVR (A new multi-task representation learning approach) is accepted to InterSpeech23. To be released soon, and formally presented in August 2023<br/>
 <span style="color:green"> **Workshops** </span> Co-hosted an international Few-Shot Learning workshop for Thales UK's "FoundAItion" (5/5/23)<br/>
-<span style="color:red"> **Talks** </span> MetaAudio presented at ICANN22 Session 2 (6/9/22)<br/>
+<span style="color:red"> ** Conference Presentations** </span> MetaAudio presented at ICANN22 Session 2 (6/9/22)<br/>
 <span style="color:purple"> **Conferences** </span> MetaAudio accepted to ICANN22. To be presented in early September<br/>
 <span style="color:blue"> **Publications** </span> [MetaAudio](https://arxiv.org/abs/2204.02121), the first few-shot audio classification benchmark is now live on arXiv and submitted to ICANN22<br/>
-<span style="color:red"> **Talks** </span> Presented an introduction to meta and few-shot learning at IDCOM<br/>
-<span style="color:red"> **Talks** </span> Presented preliminary research to Thales UK research group <br/>
-{: .notice}
+
+
+<!-- <span style="color:red"> **Talks** </span> Presented work at Thales PhD and Thales PCC days (April/May 2023)<br/> -->
+<!-- <span style="color:red"> **Talks** </span> Presented work at Thales PhD and Thales PCC days (April/May 2023)<br/>
+<span style="color:red"> **Talks** </span> Presented an introduction to meta and few-shot learning to the IDCOM Institute<br/>
+<span style="color:red"> **Talks** </span> Presented preliminary research to Thales UK research group <br/> -->
+
 
 
 
