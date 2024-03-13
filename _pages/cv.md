@@ -38,6 +38,14 @@ Publications
   {% endfor %}</ul>
   
 
+Talks
+======
+* Throughout my PhD I have given a wide variety of talks (approximately 30), some of these include:
+  <ul>{% for post in site.talks %}
+    {% include archive-single-talk-cv.html %}
+  {% endfor %}</ul>
+
+
 Additional Research Experience
 ======
 * 2020: Masters Project
@@ -50,12 +58,6 @@ Additional Research Experience
   * Duties included: Simulation of high pressure phase transitions of Magnesium using the Wien2k package
   * Supervisor: Ingo Loa
 
-Talks
-======
-* Throughout my PhD I have given a wide variety of talks (approximately 30), some of these include:
-  <ul>{% for post in site.talks %}
-    {% include archive-single-talk-cv.html %}
-  {% endfor %}</ul>
   
 Teaching
 ======
