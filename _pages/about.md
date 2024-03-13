@@ -14,11 +14,11 @@ Alongside the mentioned topics, my research interests also include meta-learning
 
 <span style="color:pink"> **Other** </span> Started writing Thesis <br/>
 <span style="color:purple"> **Conferences** </span>  ["On the Transferability of Large-Scale Self-Supervision to Few-Shot Audio Classification"](https://arxiv.org/pdf/2402.01274.pdf)  is accepted to ICASSP SASB. Code to be released soon, and formally presented in Seoul April 2024<br/>
-<span style="color:red"> ** Conference Presentations** </span> MT-SLVR presented at INTERSPEECH 23<br/>
+<span style="color:red"> **Conference Presentations** </span> MT-SLVR presented at INTERSPEECH 23<br/>
 <span style="color:blue"> **Publications** </span> [MT-SLVR](https://arxiv.org/abs/2305.17191) and its relevant code are officially released <br/>
 <span style="color:purple"> **Conferences** </span> MT-SLVR (A new multi-task representation learning approach) is accepted to InterSpeech23. To be released soon, and formally presented in August 2023<br/>
 <span style="color:green"> **Workshops** </span> Co-hosted an international Few-Shot Learning workshop for Thales UK's "FoundAItion" (5/5/23)<br/>
-<span style="color:red"> ** Conference Presentations** </span> MetaAudio presented at ICANN22 Session 2 (6/9/22)<br/>
+<span style="color:red"> **Conference Presentations** </span> MetaAudio presented at ICANN22 Session 2 (6/9/22)<br/>
 <span style="color:purple"> **Conferences** </span> MetaAudio accepted to ICANN22. To be presented in early September<br/>
 <span style="color:blue"> **Publications** </span> [MetaAudio](https://arxiv.org/abs/2204.02121), the first few-shot audio classification benchmark is now live on arXiv and submitted to ICANN22<br/>
 
