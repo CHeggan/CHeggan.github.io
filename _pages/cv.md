@@ -11,11 +11,8 @@ redirect_from:
 
 Education
 ======
-* Ph.D in Frugal Machine Learning, University Of Edinburgh (Expected finish Autumn 2024)
+* Ph.D in Frugal Machine Learning, University Of Edinburgh, 2024
 * MPhys, University Of Edinburgh, 2020
-
-
-
 
   
 Skills
@@ -30,6 +27,10 @@ Skills
   * Python
   * R
   * Java
+* Electronics Engineering
+  * Microcontrollers
+  * Rapid system prototyping
+  * PCB Design   
 
 Publications
 ======
