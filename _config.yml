@@ -82,12 +82,12 @@ analytics:
 author:
   name             : "Calum Heggan"
   avatar           : "profile_pic.jpg"
-  bio              : "PhD Candidate @ University Of Edinburgh & partnered with Thales UK. Interested in Few-Shot learning and Anomaly Detection for sequential signals"
+  bio              : "ML Researcher @ Telesemica. Interested in few-shot and self-supervised learning for acoustics."
   location         : "Edinburgh"
   employer         :
   pubmed           : 
   googlescholar    : "https://scholar.google.com/citations?user=_1R5aa8AAAAJ&hl=en&oi=ao"
-  email            : "s1529508@sms.ed.ac.uk"
+  email            : "calheggan@hotmail.com"
   researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
   uri              :
   bitbucket        :
